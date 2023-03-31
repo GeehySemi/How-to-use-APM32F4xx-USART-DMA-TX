@@ -1,0 +1,483 @@
+###############################################################################
+#
+# IAR ELF Linker V9.30.1.335/W64 for ARM                  31/Mar/2023  16:25:03
+# Copyright 2007-2022 IAR Systems AB.
+#
+#    Output file  =  D:\Desktop\APM32_USART_DMA\EWARM\Release\Exe\Boot.out
+#    Map file     =  D:\Desktop\APM32_USART_DMA\EWARM\Release\List\Boot.map
+#    Command line =
+#        -f D:\Desktop\APM32_USART_DMA\EWARM\Release\Exe\Boot.out.rsp
+#        (D:\Desktop\APM32_USART_DMA\EWARM\Release\Obj\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_adc.o
+#        D:\Desktop\APM32_USART_DMA\EWARM\Release\Obj\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_dma.o
+#        D:\Desktop\APM32_USART_DMA\EWARM\Release\Obj\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_gpio.o
+#        D:\Desktop\APM32_USART_DMA\EWARM\Release\Obj\Application\Core\apm32f4xx_int.o
+#        D:\Desktop\APM32_USART_DMA\EWARM\Release\Obj\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_misc.o
+#        D:\Desktop\APM32_USART_DMA\EWARM\Release\Obj\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_rcm.o
+#        D:\Desktop\APM32_USART_DMA\EWARM\Release\Obj\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_spi.o
+#        D:\Desktop\APM32_USART_DMA\EWARM\Release\Obj\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_syscfg.o
+#        D:\Desktop\APM32_USART_DMA\EWARM\Release\Obj\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_usart.o
+#        D:\Desktop\APM32_USART_DMA\EWARM\Release\Obj\Application\Core\main.o
+#        D:\Desktop\APM32_USART_DMA\EWARM\Release\Obj\Application\EWARM\startup_apm32f40x.o
+#        D:\Desktop\APM32_USART_DMA\EWARM\Release\Obj\Drivers\CMSIS\system_apm32f4xx.o
+#        --no_out_extension -o
+#        D:\Desktop\APM32_USART_DMA\EWARM\Release\Exe\Boot.out --map
+#        D:\Desktop\APM32_USART_DMA\EWARM\Release\List\Boot.map --config
+#        D:\Desktop\APM32_USART_DMA\EWARM\Boot.icf --semihosting --entry
+#        __iar_program_start --inline "D:\Embedded Workbench
+#        9.1\arm\CMSIS\Lib\IAR\iar_cortexM4lf_math.a" --vfe --text_out locale
+#        --cpu=Cortex-M4 --fpu=VFPv4_sp)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__CPP_Runtime   = 1
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because --advanced_heap
+was not specified and the application did not appear to
+be primarily optimized for speed.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x80f'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block PROC_STACK with size = 0, alignment = 8 { };
+define block HEAP with size = 2K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2001'ffff] {
+          rw, block CSTACK, block PROC_STACK, block HEAP };
+initialize by copy { rw };
+
+No sections matched the following patterns:
+
+  section .textrw  in "P3"
+
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                       0x194
+  .intvec            ro code   0x800'0000   0x194  startup_apm32f40x.o [2]
+                             - 0x800'0194   0x194
+
+"P1":                                      0x1068
+  .text              ro code   0x800'0194   0x328  apm32f4xx_dma.o [3]
+  .text              ro code   0x800'04bc   0x2c0  main.o [1]
+  .text              ro code   0x800'077c    0x36  strlen.o [7]
+  .text              ro code   0x800'07b2    0x7e  lz77_init_single.o [7]
+  .text              ro code   0x800'0830    0xc4  apm32f4xx_misc.o [3]
+  .text              ro code   0x800'08f4   0x110  apm32f4xx_rcm.o [3]
+  .text              ro code   0x800'0a04   0x114  apm32f4xx_gpio.o [3]
+  .text              ro code   0x800'0b18   0x1ae  apm32f4xx_usart.o [3]
+  .text              ro code   0x800'0cc8    0x86  ABImemcpy.o [7]
+  .text              ro code   0x800'0d50   0x124  system_apm32f4xx.o [4]
+  .text              ro code   0x800'0e74    0xc0  apm32f4xx_int.o [1]
+  .text              ro code   0x800'0f34    0x28  data_init.o [7]
+  .text              ro code   0x800'0f5c    0x22  fpinit_M.o [6]
+  .iar.init_table    const     0x800'0f80    0x10  - Linker created -
+  .text              ro code   0x800'0f90    0x1e  cmain.o [7]
+  .text              ro code   0x800'0fae     0x4  exit.o [5]
+  .text              ro code   0x800'0fb4     0xa  cexit.o [7]
+  .text              ro code   0x800'0fc0    0x14  exit.o [8]
+  .text              ro code   0x800'0fd4    0x1c  cstartup_M.o [7]
+  .rodata            const     0x800'0ff0    0x10  apm32f4xx_rcm.o [3]
+  .text              ro code   0x800'1000    0x10  startup_apm32f40x.o [2]
+  .rodata            const     0x800'1010     0x8  apm32f4xx_rcm.o [3]
+  .text              ro code   0x800'1018     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'101c     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1020     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1024     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1028     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'102c     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1030     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1034     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1038     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'103c     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1040     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1044     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1048     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'104c     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1050     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1054     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1058     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'105c     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1060     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1064     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1068     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'106c     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1070     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1074     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1078     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'107c     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1080     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1084     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1088     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'108c     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1090     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1094     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1098     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'109c     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'10a0     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'10a4     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'10a8     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'10ac     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'10b0     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'10b4     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'10b8     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'10bc     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'10c0     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'10c4     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'10c8     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'10cc     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'10d0     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'10d4     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'10d8     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'10dc     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'10e0     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'10e4     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'10e8     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'10ec     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'10f0     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'10f4     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'10f8     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'10fc     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1100     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1104     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1108     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'110c     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1110     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1114     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1118     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'111c     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1120     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1124     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1128     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'112c     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1130     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1134     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1138     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'113c     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1140     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1144     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1148     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'114c     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1150     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1154     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'1158     0x4  startup_apm32f40x.o [2]
+  .text              ro code   0x800'115c     0x4  startup_apm32f40x.o [2]
+  .rodata            const     0x800'1160     0x0  lz77_init_single.o [7]
+  Initializer bytes  const     0x800'1160    0x9c  <for P2-1>
+                             - 0x800'11fc  0x1068
+
+"P2", part 1 of 2:                          0x264
+  P2-1                        0x2000'0000   0x264  <Init block>
+    .data            inited   0x2000'0000   0x258  main.o [1]
+    .data            inited   0x2000'0258     0x4  system_apm32f4xx.o [4]
+    .bss             inited   0x2000'025c     0x4  main.o [1]
+    .bss             inited   0x2000'0260     0x2  main.o [1]
+    .bss             inited   0x2000'0262     0x1  main.o [1]
+    .bss             inited   0x2000'0263     0x1  main.o [1]
+                            - 0x2000'0264   0x264
+
+"P2", part 2 of 2:                          0x400
+  CSTACK                      0x2000'0268   0x400  <Block>
+    CSTACK           uninit   0x2000'0268   0x400  <Block tail>
+                            - 0x2000'0668   0x400
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+   0x800'11fc   0x80f'ffff  0xf'ee04
+  0x2000'0264  0x2000'0267       0x4
+  0x2000'0668  0x2001'ffff  0x1'f998
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Copy/lz77 (__iar_lz77_init_single3)
+    1 source range, total size 0x9c (25% of destination):
+           0x800'1160   0x9c
+    1 destination range, total size 0x264:
+          0x2000'0000  0x264
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module               ro code  ro data  rw data
+    ------               -------  -------  -------
+command line/config:
+    ----------------------------------------------
+    Total:
+
+D:\Desktop\APM32_USART_DMA\EWARM\Release\Obj\Application\Core: [1]
+    apm32f4xx_int.o          192
+    main.o                   704      155      608
+    ----------------------------------------------
+    Total:                   896      155      608
+
+D:\Desktop\APM32_USART_DMA\EWARM\Release\Obj\Application\EWARM: [2]
+    startup_apm32f40x.o      748
+    ----------------------------------------------
+    Total:                   748
+
+D:\Desktop\APM32_USART_DMA\EWARM\Release\Obj\Drivers\APM32F4xx_StdPeriphDriver\src: [3]
+    apm32f4xx_dma.o          808
+    apm32f4xx_gpio.o         276
+    apm32f4xx_misc.o         196
+    apm32f4xx_rcm.o          272       24
+    apm32f4xx_usart.o        430
+    ----------------------------------------------
+    Total:                 1'982       24
+
+D:\Desktop\APM32_USART_DMA\EWARM\Release\Obj\Drivers\CMSIS: [4]
+    system_apm32f4xx.o       292        1        4
+    ----------------------------------------------
+    Total:                   292        1        4
+
+dl7M_tln.a: [5]
+    exit.o                     4
+    ----------------------------------------------
+    Total:                     4
+
+m7M_tls.a: [6]
+    fpinit_M.o                34
+    ----------------------------------------------
+    Total:                    34
+
+rt7M_tl.a: [7]
+    ABImemcpy.o              134
+    cexit.o                   10
+    cmain.o                   30
+    cstartup_M.o              28
+    data_init.o               40
+    lz77_init_single.o       126
+    strlen.o                  54
+    ----------------------------------------------
+    Total:                   422
+
+shb_l.a: [8]
+    exit.o                    20
+    ----------------------------------------------
+    Total:                    20
+
+    Gaps                       8        2
+    Linker created                     16    1'024
+--------------------------------------------------
+    Grand Total:           4'406      198    1'636
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base    0x800'0f80          --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'0f90          --   Gb  - Linker created -
+?main                    0x800'0f91         Code  Gb  cmain.o [7]
+ADC_IRQHandler           0x800'1061         Code  Wk  startup_apm32f40x.o [2]
+APM32_DMA_Init           0x800'05df   0xa0  Code  Lc  main.o [1]
+APM32_USART1_UART_Init   0x800'067f   0xbe  Code  Lc  main.o [1]
+BN_IRQHandler            0x800'115d         Code  Wk  startup_apm32f40x.o [2]
+BusFault_Handler         0x800'0e7b    0x2  Code  Gb  apm32f4xx_int.o [1]
+CAN1_RX0_IRQHandler      0x800'1069         Code  Wk  startup_apm32f40x.o [2]
+CAN1_RX1_IRQHandler      0x800'106d         Code  Wk  startup_apm32f40x.o [2]
+CAN1_SCE_IRQHandler      0x800'1071         Code  Wk  startup_apm32f40x.o [2]
+CAN1_TX_IRQHandler       0x800'1065         Code  Wk  startup_apm32f40x.o [2]
+CAN2_RX0_IRQHandler      0x800'1115         Code  Wk  startup_apm32f40x.o [2]
+CAN2_RX1_IRQHandler      0x800'1119         Code  Wk  startup_apm32f40x.o [2]
+CAN2_SCE_IRQHandler      0x800'111d         Code  Wk  startup_apm32f40x.o [2]
+CAN2_TX_IRQHandler       0x800'1111         Code  Wk  startup_apm32f40x.o [2]
+CSTACK$$Base            0x2000'0268          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'0668          --   Gb  - Linker created -
+DCI_IRQHandler           0x800'1149         Code  Wk  startup_apm32f40x.o [2]
+DMA1_STR0_IRQHandler     0x800'1045         Code  Wk  startup_apm32f40x.o [2]
+DMA1_STR1_IRQHandler     0x800'1049         Code  Wk  startup_apm32f40x.o [2]
+DMA1_STR2_IRQHandler     0x800'104d         Code  Wk  startup_apm32f40x.o [2]
+DMA1_STR3_IRQHandler     0x800'1051         Code  Wk  startup_apm32f40x.o [2]
+DMA1_STR4_IRQHandler     0x800'1055         Code  Wk  startup_apm32f40x.o [2]
+DMA1_STR5_IRQHandler     0x800'1059         Code  Wk  startup_apm32f40x.o [2]
+DMA1_STR6_IRQHandler     0x800'105d         Code  Wk  startup_apm32f40x.o [2]
+DMA1_STR7_IRQHandler     0x800'10d1         Code  Wk  startup_apm32f40x.o [2]
+DMA2_STR0_IRQHandler     0x800'10f5         Code  Wk  startup_apm32f40x.o [2]
+DMA2_STR1_IRQHandler     0x800'10f9         Code  Wk  startup_apm32f40x.o [2]
+DMA2_STR2_IRQHandler     0x800'10fd         Code  Wk  startup_apm32f40x.o [2]
+DMA2_STR3_IRQHandler     0x800'1101         Code  Wk  startup_apm32f40x.o [2]
+DMA2_STR4_IRQHandler     0x800'1105         Code  Wk  startup_apm32f40x.o [2]
+DMA2_STR5_IRQHandler     0x800'1125         Code  Wk  startup_apm32f40x.o [2]
+DMA2_STR6_IRQHandler     0x800'1129         Code  Wk  startup_apm32f40x.o [2]
+DMA2_STR7_IRQHandler     0x800'0e95   0x44  Code  Gb  apm32f4xx_int.o [1]
+DMA_ClearIntFlag         0x800'043d   0x20  Code  Gb  apm32f4xx_dma.o [3]
+DMA_ClearStatusFlag      0x800'0409   0x14  Code  Gb  apm32f4xx_dma.o [3]
+DMA_Config               0x800'02fd   0xa6  Code  Gb  apm32f4xx_dma.o [3]
+DMA_ConfigDataNumber     0x800'03bb    0x8  Code  Gb  apm32f4xx_dma.o [3]
+DMA_ConfigMemoryTarget   0x800'03c3   0x10  Code  Gb  apm32f4xx_dma.o [3]
+DMA_Disable              0x800'03af    0xc  Code  Gb  apm32f4xx_dma.o [3]
+DMA_Enable               0x800'03a3    0xc  Code  Gb  apm32f4xx_dma.o [3]
+DMA_EnableInterrupt      0x800'041d   0x20  Code  Gb  apm32f4xx_dma.o [3]
+DMA_ReadCmdStatus        0x800'03d3    0x8  Code  Gb  apm32f4xx_dma.o [3]
+DMA_ReadStatusFlag       0x800'03db   0x2e  Code  Gb  apm32f4xx_dma.o [3]
+DMA_Reset                0x800'0195  0x168  Code  Gb  apm32f4xx_dma.o [3]
+DebugMon_Handler         0x800'0e81    0x2  Code  Gb  apm32f4xx_int.o [1]
+EINT0_IRQHandler         0x800'1031         Code  Wk  startup_apm32f40x.o [2]
+EINT15_10_IRQHandler     0x800'10b5         Code  Wk  startup_apm32f40x.o [2]
+EINT1_IRQHandler         0x800'1035         Code  Wk  startup_apm32f40x.o [2]
+EINT2_IRQHandler         0x800'1039         Code  Wk  startup_apm32f40x.o [2]
+EINT3_IRQHandler         0x800'103d         Code  Wk  startup_apm32f40x.o [2]
+EINT4_IRQHandler         0x800'1041         Code  Wk  startup_apm32f40x.o [2]
+EINT9_5_IRQHandler       0x800'1075         Code  Wk  startup_apm32f40x.o [2]
+EMMC_IRQHandler          0x800'10d5         Code  Wk  startup_apm32f40x.o [2]
+ETH_IRQHandler           0x800'1109         Code  Wk  startup_apm32f40x.o [2]
+ETH_WKUP_IRQHandler      0x800'110d         Code  Wk  startup_apm32f40x.o [2]
+FLASH_IRQHandler         0x800'1029         Code  Wk  startup_apm32f40x.o [2]
+FPU_IRQHandler           0x800'1151         Code  Wk  startup_apm32f40x.o [2]
+GPIO_Config              0x800'0a05   0xae  Code  Gb  apm32f4xx_gpio.o [3]
+GPIO_ConfigPinAF         0x800'0ab3   0x66  Code  Gb  apm32f4xx_gpio.o [3]
+HardFault_Handler        0x800'0e77    0x2  Code  Gb  apm32f4xx_int.o [1]
+I2C1_ER_IRQHandler       0x800'1099         Code  Wk  startup_apm32f40x.o [2]
+I2C1_EV_IRQHandler       0x800'1095         Code  Wk  startup_apm32f40x.o [2]
+I2C2_ER_IRQHandler       0x800'10a1         Code  Wk  startup_apm32f40x.o [2]
+I2C2_EV_IRQHandler       0x800'109d         Code  Wk  startup_apm32f40x.o [2]
+I2C3_ER_IRQHandler       0x800'1135         Code  Wk  startup_apm32f40x.o [2]
+I2C3_EV_IRQHandler       0x800'1131         Code  Wk  startup_apm32f40x.o [2]
+LL_mDelay                0x800'0519   0x24  Code  Lc  main.o [1]
+MemManage_Handler        0x800'0e79    0x2  Code  Gb  apm32f4xx_int.o [1]
+NMI_Handler              0x800'0e75    0x2  Code  Gb  apm32f4xx_int.o [1]
+NVIC_ConfigPriorityGroup
+                         0x800'0831    0xe  Code  Gb  apm32f4xx_misc.o [3]
+NVIC_EnableIRQRequest    0x800'083f   0xa6  Code  Gb  apm32f4xx_misc.o [3]
+OTG_FS_IRQHandler        0x800'1121         Code  Wk  startup_apm32f40x.o [2]
+OTG_FS_WKUP_IRQHandler   0x800'10bd         Code  Wk  startup_apm32f40x.o [2]
+OTG_HS1_EP1_IN_IRQHandler
+                         0x800'113d         Code  Wk  startup_apm32f40x.o [2]
+OTG_HS1_EP1_OUT_IRQHandler
+                         0x800'1139         Code  Wk  startup_apm32f40x.o [2]
+OTG_HS1_IRQHandler       0x800'1145         Code  Wk  startup_apm32f40x.o [2]
+OTG_HS1_WKUP_IRQHandler
+                         0x800'1141         Code  Wk  startup_apm32f40x.o [2]
+PVD_IRQHandler           0x800'101d         Code  Wk  startup_apm32f40x.o [2]
+PendSV_Handler           0x800'0e83    0x2  Code  Gb  apm32f4xx_int.o [1]
+RCM_EnableAHB1PeriphClock
+                         0x800'09cf    0xa  Code  Gb  apm32f4xx_rcm.o [3]
+RCM_EnableAPB2PeriphClock
+                         0x800'09d9    0xa  Code  Gb  apm32f4xx_rcm.o [3]
+RCM_IRQHandler           0x800'102d         Code  Wk  startup_apm32f40x.o [2]
+RCM_ReadHCLKFreq         0x800'0961   0x26  Code  Gb  apm32f4xx_rcm.o [3]
+RCM_ReadPCLKFreq         0x800'0987   0x48  Code  Gb  apm32f4xx_rcm.o [3]
+RCM_ReadSYSCLKFreq       0x800'08f5   0x6c  Code  Gb  apm32f4xx_rcm.o [3]
+RNG_IRQHandler           0x800'114d         Code  Wk  startup_apm32f40x.o [2]
+RTC_Alarm_IRQHandler     0x800'10b9         Code  Wk  startup_apm32f40x.o [2]
+RTC_WKUP_IRQHandler      0x800'1025         Code  Wk  startup_apm32f40x.o [2]
+Region$$Table$$Base      0x800'0f80          --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'0f90          --   Gb  - Linker created -
+Reset_Handler            0x800'1001         Code  Wk  startup_apm32f40x.o [2]
+SDIO_IRQHandler          0x800'10d9         Code  Wk  startup_apm32f40x.o [2]
+SM3_IRQHandler           0x800'1155         Code  Wk  startup_apm32f40x.o [2]
+SM4_IRQHandler           0x800'1159         Code  Wk  startup_apm32f40x.o [2]
+SPI1_IRQHandler          0x800'10a5         Code  Wk  startup_apm32f40x.o [2]
+SPI2_IRQHandler          0x800'10a9         Code  Wk  startup_apm32f40x.o [2]
+SPI3_IRQHandler          0x800'10e1         Code  Wk  startup_apm32f40x.o [2]
+SVC_Handler              0x800'0e7f    0x2  Code  Gb  apm32f4xx_int.o [1]
+SysTick_Config           0x800'04e9   0x30  Code  Lc  main.o [1]
+SysTick_Handler          0x800'0e85   0x10  Code  Gb  apm32f4xx_int.o [1]
+SystemClockConfig        0x800'0d97   0xae  Code  Lc  system_apm32f4xx.o [4]
+SystemClock_Config       0x800'05bd   0x22  Code  Gb  main.o [1]
+SystemCoreClock         0x2000'0258    0x4  Data  Gb  system_apm32f4xx.o [4]
+SystemInit               0x800'0d51   0x46  Code  Gb  system_apm32f4xx.o [4]
+TAMP_STAMP_IRQHandler    0x800'1021         Code  Wk  startup_apm32f40x.o [2]
+TMR1_BRK_TMR9_IRQHandler
+                         0x800'1079         Code  Wk  startup_apm32f40x.o [2]
+TMR1_CC_IRQHandler       0x800'1085         Code  Wk  startup_apm32f40x.o [2]
+TMR1_TRG_COM_TMR11_IRQHandler
+                         0x800'1081         Code  Wk  startup_apm32f40x.o [2]
+TMR1_UP_TMR10_IRQHandler
+                         0x800'107d         Code  Wk  startup_apm32f40x.o [2]
+TMR2_IRQHandler          0x800'1089         Code  Wk  startup_apm32f40x.o [2]
+TMR3_IRQHandler          0x800'108d         Code  Wk  startup_apm32f40x.o [2]
+TMR4_IRQHandler          0x800'1091         Code  Wk  startup_apm32f40x.o [2]
+TMR5_IRQHandler          0x800'10dd         Code  Wk  startup_apm32f40x.o [2]
+TMR6_DAC_IRQHandler      0x800'10ed         Code  Wk  startup_apm32f40x.o [2]
+TMR7_IRQHandler          0x800'10f1         Code  Wk  startup_apm32f40x.o [2]
+TMR8_BRK_TMR12_IRQHandler
+                         0x800'10c1         Code  Wk  startup_apm32f40x.o [2]
+TMR8_CC_IRQHandler       0x800'10cd         Code  Wk  startup_apm32f40x.o [2]
+TMR8_TRG_COM_TMR14_IRQHandler
+                         0x800'10c9         Code  Wk  startup_apm32f40x.o [2]
+TMR8_UP_TMR13_IRQHandler
+                         0x800'10c5         Code  Wk  startup_apm32f40x.o [2]
+UART4_IRQHandler         0x800'10e5         Code  Wk  startup_apm32f40x.o [2]
+UART5_IRQHandler         0x800'10e9         Code  Wk  startup_apm32f40x.o [2]
+USART1_IRQHandler        0x800'0ed9   0x48  Code  Gb  apm32f4xx_int.o [1]
+USART2_IRQHandler        0x800'10ad         Code  Wk  startup_apm32f40x.o [2]
+USART3_IRQHandler        0x800'10b1         Code  Wk  startup_apm32f40x.o [2]
+USART6_IRQHandler        0x800'112d         Code  Wk  startup_apm32f40x.o [2]
+USART_ClearStatusFlag    0x800'0cbb    0xc  Code  Gb  apm32f4xx_usart.o [3]
+USART_Config             0x800'0b19  0x116  Code  Gb  apm32f4xx_usart.o [3]
+USART_Enable             0x800'0c39    0xe  Code  Gb  apm32f4xx_usart.o [3]
+USART_EnableDMA          0x800'0c5b   0x2c  Code  Gb  apm32f4xx_usart.o [3]
+USART_EnableInterrupt    0x800'0c87   0x22  Code  Gb  apm32f4xx_usart.o [3]
+USART_ReadStatusFlag     0x800'0ca9   0x12  Code  Gb  apm32f4xx_usart.o [3]
+USART_RxData             0x800'0c53    0x8  Code  Gb  apm32f4xx_usart.o [3]
+USART_TxData             0x800'0c47    0xc  Code  Gb  apm32f4xx_usart.o [3]
+UsageFault_Handler       0x800'0e7d    0x2  Code  Gb  apm32f4xx_int.o [1]
+WWDT_IRQHandler          0x800'1019         Code  Wk  startup_apm32f40x.o [2]
+__NVIC_SetPriority       0x800'04bd   0x2c  Code  Lc  main.o [1]
+__aeabi_memcpy4          0x800'0cc9         Code  Gb  ABImemcpy.o [7]
+__aeabi_memcpy8          0x800'0cc9         Code  Gb  ABImemcpy.o [7]
+__cmain                  0x800'0f91         Code  Gb  cmain.o [7]
+__exit                   0x800'0fc1   0x14  Code  Gb  exit.o [8]
+__iar_data_init3         0x800'0f35   0x28  Code  Gb  data_init.o [7]
+__iar_init_vfp           0x800'0f5d         Code  Gb  fpinit_M.o [6]
+__iar_lz77_init_single3
+                         0x800'07b3   0x7e  Code  Gb  lz77_init_single.o [7]
+__iar_program_start      0x800'0fd5         Code  Gb  cstartup_M.o [7]
+__vector_table           0x800'0000         Data  Gb  startup_apm32f40x.o [2]
+_call_main               0x800'0f9d         Code  Gb  cmain.o [7]
+_exit                    0x800'0fb5         Code  Gb  cexit.o [7]
+exit                     0x800'0faf    0x4  Code  Gb  exit.o [5]
+gb_uart_rx_complete_flag
+                        0x2000'0263    0x1  Data  Gb  main.o [1]
+gb_uart_tx_complete_flag
+                        0x2000'0262    0x1  Data  Gb  main.o [1]
+gn_sw_tickcount         0x2000'025c    0x4  Data  Gb  main.o [1]
+gn_uart_dma_buffer_idx  0x2000'0260    0x2  Data  Lc  main.o [1]
+gn_uart_msg_buffer      0x2000'0000  0x258  Data  Lc  main.o [1]
+main                     0x800'053d   0x80  Code  Gb  main.o [1]
+strlen                   0x800'077d         Code  Gb  strlen.o [7]
+
+
+[1] = D:\Desktop\APM32_USART_DMA\EWARM\Release\Obj\Application\Core
+[2] = D:\Desktop\APM32_USART_DMA\EWARM\Release\Obj\Application\EWARM
+[3] = D:\Desktop\APM32_USART_DMA\EWARM\Release\Obj\Drivers\APM32F4xx_StdPeriphDriver\src
+[4] = D:\Desktop\APM32_USART_DMA\EWARM\Release\Obj\Drivers\CMSIS
+[5] = dl7M_tln.a
+[6] = m7M_tls.a
+[7] = rt7M_tl.a
+[8] = shb_l.a
+
+  4'406 bytes of readonly  code memory
+    198 bytes of readonly  data memory
+  1'636 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
